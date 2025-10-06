@@ -1,0 +1,15 @@
+# indexing = acccesing elements of a sequence using [] (indexing operator)
+#     [start : end (exclusive) : step]
+
+credit_number = "1234-5678-9012-3456"
+
+# print(credit_number[0:4])
+# print(credit_number[:9]) 
+# print(credit_number[::2])
+print(credit_number[0:9:2])
+
+last_digits = credit_number[-4:]
+print(f"XXXX-XXXX-XXXX-{last_digits}")
+
+reverse_number = credit_number[::-1]
+print(reverse_number)
