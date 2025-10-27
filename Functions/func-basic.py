@@ -1,8 +1,7 @@
-fruits = ["apple", "banana", "mango", "orange"]
+def sum_num(a,b): #parameters
+    sum = a+b
+    print(sum)
+    return a+b
 
-def list_function(list):
-    for el in list:
-        print(el, end=" ")
-        
-list_function(fruits)
-    
+sum_num(2,1) #arguments
+
