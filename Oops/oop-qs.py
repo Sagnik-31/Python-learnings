@@ -17,7 +17,7 @@ class Student:
         else:
             print("Failed")
 
-s1 = Student("Sagnik", 52, [91,90,95])
+s1 = Student("Sagnik", 52, [91,90,95]) # object
 s1.calc_avg()
 s1.check_result()
     
