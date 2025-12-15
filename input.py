@@ -4,3 +4,5 @@
 # print(f"you are {age} years old")
 print("sagnik", end=" ")
 print("ghosh")
+
+print(5//2)
