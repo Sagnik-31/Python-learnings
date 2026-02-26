@@ -6,5 +6,6 @@ def func(arr,left,right):
 
     func(arr,left+1,right-1)
     return arr
+   
 
 print(func([1,2,3,4,5,6,7], 0 , 6))
