@@ -7,3 +7,5 @@ for i in range(n-2,-1,-1):
             nums[j],nums[j+1] = nums[j+1],nums[j]
 
 print(nums)
+
+#TC -> O(N^2) SC->O(1) , adjacent swaps
