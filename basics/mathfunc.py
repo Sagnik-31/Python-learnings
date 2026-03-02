@@ -1,17 +1,9 @@
-x = 3.12
-y = -4
-z = 5
+li = [1,2,3,4,5,6,7,8]
 
-# result = round(x)
-# result = abs(y), absolute value is distance away from 0 as a whole number.
-# result = pow(4,3)
-# result = max(x,y,x)
-# result = min(x,y,z)
-import math
-
-r = 9
-
-# print(math.pi)
-# print(math.e)
-result = math.sqrt(r)
-print(result)
+left = 0
+right = len(li)-1
+while right>=left:
+    li[right] , li[left] = li[left] , li[right]
+    left += 1
+    right -= 1
+print(li)

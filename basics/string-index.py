@@ -1,15 +1,34 @@
-# indexing = acccesing elements of a sequence using [] (indexing operator)
-#     [start : end (exclusive) : step]
+# li = ["Apple", 20, 30, 20, "aPple"]
+# left = 0
+# right = len(li) - 1
 
-credit_number = "1234-5678-9012-3456"
+# while left < right:
+#     if li[left] != li[right]:
+#         print("Not Palindrome")
+#         break
+#     left += 1
+#     right -= 1
+# else:
+#     print("Palindrome")
 
-# print(credit_number[0:4])
-# print(credit_number[:9]) 
-# print(credit_number[::2])
-print(credit_number[0:9:2])
+li = ["Apple", 20, 30, 20, "apPle"]
 
-last_digits = credit_number[-4:]
-print(f"XXXX-XXXX-XXXX-{last_digits}")
+left = 0
+right = len(li) - 1
 
-reverse_number = credit_number[::-1]
-print(reverse_number)
+while left < right:
+    a = li[left]
+    b = li[right]
+    if isinstance(a, str) and isinstance(b, str):
+        if a.lower() != b.lower():
+            print("Not Palindrome")
+            break
+    else:
+        if a != b:
+            print("Not Palindrome")
+            break
+
+    left += 1
+    right -= 1
+else:
+    print("Palindrome")
