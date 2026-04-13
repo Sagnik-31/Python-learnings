@@ -1,4 +1,5 @@
 # push , pop , top , size , is_empty -> LIFO principle
+# TC -> O(1)
 
 class Stack:
 
