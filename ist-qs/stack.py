@@ -30,6 +30,13 @@ class Stack:
         if self.l==0:
             return "stack is empty"
         return "stack is not empty"
+    
+    def display(self):
+        if self.l == 0:
+            print("Stack is empty")
+        else:
+            print("Stack elements (top to bottom):", self.items[::-1])
+            #   print("Stack elements (bottom to top):", self.items)
 
 stack = Stack()
 stack.push(1)
@@ -39,8 +46,8 @@ stack.push(4)
 stack.push(5)
 stack.push(6)
 stack.push(7)
+stack.display()
 print(stack.pop())
-print(stack.size())
 print(stack.is_empty())
-print(f"{stack}")
+stack.display()
         
