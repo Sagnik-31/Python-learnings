@@ -27,8 +27,10 @@ def eval_expression(arr):
 
     return stack[-1]
 
-print(eval_expression(["2","1","+","3","*"])) # 9
-
+user_input = input("enter number seperated by spaces: ")
+arr = user_input.split()
+result = eval_expression(arr)
+print(result)
             
 
 

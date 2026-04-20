@@ -35,28 +35,34 @@
 # result = calculator(num1, num2, operation)
 # print(f"{num1} {operation} {num2} = {result}")
 
+while True:
+    print("1. Addition")
+    print("2. Substraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Exit")
 
-def calc(num1,num2,operation):
+    choice = int(input("enter choice: "))
 
-    match operation:
-        case '+':
-            return num1+num2
-        
-        case '-':
-            return num1-num2
-        
-        case '*':
-            return num1*num2
-        
-        case '/':
-            if num2 == 0:
-                return "cant divide by zero"
-            return num1/num2
-        
-        case '**' | '^':
-            return num1**num2
-        
+    if choice == 5:
+        print("program terminated")
+        break
+   
+    A = float(int(input("enter a number: ")))
+    B = float(int(input("enter second number: ")))
+
+    match choice:
+        case 1:
+            print("Result",A+B)
+        case 2:
+            print("Result", A-B)
+        case 3:
+            print("Result",A*B)
+        case 4:
+            if B==0:
+                print("cant divide by zero")
+            print("Result",A/B)
         case _:
-            return "invalid operator"
+            print("invalid choice")
 
-print(calc(5,6,'+'))
+
