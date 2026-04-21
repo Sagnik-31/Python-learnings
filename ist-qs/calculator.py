@@ -61,7 +61,8 @@ while True:
         case 4:
             if B==0:
                 print("cant divide by zero")
-            print("Result",A/B)
+            else:
+                print("Result",A/B)
         case _:
             print("invalid choice")
 

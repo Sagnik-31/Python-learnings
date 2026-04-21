@@ -14,10 +14,10 @@ for row in A:
     print(row)
 
 T = []
-for j in range(c):
+for i in range(c):
     row = []
-    for i in range(r):
-        row.append(A[i][j])
+    for j in range(r):
+        row.append(A[j][i])
     T.append(row)
 
 print("transposed matrix: ")

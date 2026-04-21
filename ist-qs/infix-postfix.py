@@ -34,3 +34,4 @@ def infix_to_postfix(infix):
 
     return post
 print(infix_to_postfix("(A+B)*(C*D-E)*F/G"))
+
