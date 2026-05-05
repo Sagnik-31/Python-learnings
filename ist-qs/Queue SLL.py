@@ -29,12 +29,7 @@ class Queue:
     def is_empty(self):
         return self.front is None
 
-    def peek(self):
-        if self.front is None:
-            return None
-        return self.front.data
-
-    def display(self):
+    def traverse(self):
         if self.front is None:
             print("Queue is empty")
             return
@@ -42,14 +37,14 @@ class Queue:
         while current:
             print(current.data, end=" ")
             current = current.next
-        print()
+        print(None)
+        
 
 
 q = Queue()
 q.enqueue(1)
 q.enqueue(2)
 q.enqueue(3)
-q.display()
-print("Peek:", q.peek())
+q.traverse()
 print("Dequeue:", q.dequeue())
-q.display()
+q.traverse()
