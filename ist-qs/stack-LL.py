@@ -1,18 +1,16 @@
 
-    
-class Node:
-    def __init__(self, val):
-        self.val = val
-        self.next = None
-
-
 class StackLL:
+    class Node:
+        def __init__(self, val):
+            self.val = val
+            self.next = None
+
     def __init__(self):
         self.head = None   # top of stack
 
     # PUSH (insert at beginning)
     def push(self, data):
-        new_node = Node(data)
+        new_node = self.Node(data)
         new_node.next = self.head
         self.head = new_node
 
