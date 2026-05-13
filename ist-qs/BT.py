@@ -1,15 +1,14 @@
 class BT:
     def __init__(self):
         self.root = None
-        self.size = 0
-    
+
     class Node:
-        def __init__(self,d,p,l=None,r=None):
+        def __init__(self, d, p, l, r):
             self.data = d
             self.parent = p
             self.left = l
-            self.right = r
 
+            self.right = r
     def create_node(self,d,p,l=None,r=None):
         n = self.Node(d,p,l,r)
         return n
@@ -20,55 +19,34 @@ class BT:
             return None
         self.root = n
 
-    def assign_left(self, parent, left):
+    def assign_left(self,parent,left):
+        if parent.left != None:
+            print("Left exists")
+        else:
+            parent.left = left
+            left.parent = parent
 
-        if parent.left != None: 
-            print("Left child already exists")
-            return None
-
-        parent.left = left
-        left.parent = parent
-    
     def assign_right(self,parent,right):
-        
-        if parent.right!= None:
-            print("Right child already exists")
-            return None
-        
-        parent.right = right
-        right.parent = parent
-
+        if parent.right != None:
+            print("Right exists")
+        else:
+            parent.right = right
+            right.parent = parent
+            
     def preorder(self,root):
-        if root==None:
-            return None
-
-        else:
-            print(root.data)
-            self.preorder(root.left)
-            self.preorder(root.right)
-    
-    def inorder(self,root):
-        if root==None:
-            return None
-        else:
-            self.inorder(root.left)
-            print(root.data)
-            self.inorder(root.right)
-
-    def postorder(self,root):
         if root == None:
             return None
         else:
-            self.postorder(root.left)
-            self.postorder(root.right)
             print(root.data)
-
-    
-
-    
+            print("left")
+            self.preorder(root.left)
+            print("right")
+            self.preorder(root.right)
 
 bt = BT()
 n = bt.create_node(12,None)
 bt.assign_root(n)
-    
-       
+n1 = bt.create_node(13,None)
+bt.assign_left(n,n1)
+bt.assign_left(n,n1)
+bt.preorder(n)
