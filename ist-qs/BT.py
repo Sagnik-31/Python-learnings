@@ -43,6 +43,24 @@ class BT:
             print("right")
             self.preorder(root.right)
 
+    def inorder(self,root):
+        if root == None:
+            return None
+        else:
+            self.inorder(root.left)
+            print(root.data)
+            self.inorder(root.right)
+    
+    def postorder(self,root):
+        if root == None:
+            return None
+        else:
+            self.postorder(root.left)
+            self.postorder(root.right)
+            print(root.data)
+
+
+
 bt = BT()
 n = bt.create_node(12,None)
 bt.assign_root(n)
