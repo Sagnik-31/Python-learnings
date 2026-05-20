@@ -1,3 +1,5 @@
+# stack -> add at front , remove at front
+
 class Stack:
     def __init__(self):
         self.top = None
