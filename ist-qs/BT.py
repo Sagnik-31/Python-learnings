@@ -49,9 +49,10 @@ class BT:
     
     def inorder(self,root):
         if root == None:
-            self.inorder(root.left)
-            self.inorder(root.data, end="")
-            self.inorder(root.right)
+            return
+        self.inorder(root.left)
+        self.inorder(root.data, end="")
+        self.inorder(root.right)
 
 bt = BT()
 

@@ -44,7 +44,7 @@ class Graph:
 
 vertices = int(input("enter no of vertices: "))
 
-choice = int(input("enter 1 for directed and 0 for undirected"))
+choice = int(input("enter 1 for directed and 0 for undirected: "))
 
 if choice == 1:
     g = Graph(vertices,True)
@@ -59,10 +59,12 @@ for i in range(edges):
     u = int(input("enter source vertex: "))
     v = int(input("enter destination vertex: "))
     w = int(input("enter weight: "))
+    print()
 
     g.add_edge(u,v,w)
 
 start = int(input("enter source vertex: "))
+print()
 
 result = g.dijkstra(start)
 
