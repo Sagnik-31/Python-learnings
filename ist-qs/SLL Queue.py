@@ -1,3 +1,5 @@
+# add at last, remove from front
+
 class Queue:
     def __init__(self):
         self.head = None

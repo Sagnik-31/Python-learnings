@@ -29,7 +29,7 @@ class Stack:
         if self.is_empty():
             return "The stack is  empty"
         else:
-            return self.t[-1]
+            return self.items[-1]
 
 
 

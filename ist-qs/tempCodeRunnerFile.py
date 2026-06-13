@@ -1,1 +1,1 @@
-print(graph)
+"(A+B)*(C*D-E)*F/G"

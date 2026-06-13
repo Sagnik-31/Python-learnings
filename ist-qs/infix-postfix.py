@@ -1,37 +1,21 @@
-def infix_to_postfix(infix):
-    def p(op):
-        if op == '+' or op == '-':
-            return 1
-        if op == '*' or op == '/':
-            return 2
-        if op == '^':
-            return 3
-        return 0
+class Graph:
+    def __init__(self,vertices):
+        self.v = vertices
+        self.g = {}
+
+        for i in range(vertices):
+            self.g[i] = []
     
-    stack = []
-    post = ""
+    def add_edge(self,v1,v2):
+        self.g[v1].append(v2)
+        self.g[v2].append(v1)
+    
+    def DFS(self,node,visited):
+        if node not in visited:
+            print(node)
+            visited.add(node)
+            for i in self.g[node]:
+                self.DFS(i,visited)
 
-    for ch in infix:
-        
-        if ch.isalnum():
-            post += ch
-        
-        elif ch == '(':
-            stack.append(ch)
-        
-        elif ch == ')':
-            while stack and stack[-1] != '(':
-                post += stack.pop()
-            stack.pop()
-        
-        else:
-            while stack and p(stack[-1]) >= p(ch):
-                post += stack.pop()
-            stack.append(ch)
-
-    while stack:
-        post += stack.pop()
-
-    return post
-print(infix_to_postfix("(A+B)*(C*D-E)*F/G"))
+visited = set()
 
