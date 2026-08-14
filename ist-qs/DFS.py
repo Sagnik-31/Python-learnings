@@ -38,3 +38,5 @@ for i in range(e):
 node = int(input("enter start vertex: "))
 print("DFS Traversal")
 dfs.DFS(node,visited)
+
+
