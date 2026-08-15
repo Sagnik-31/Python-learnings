@@ -7,7 +7,7 @@ result = []
 i, j = 0,0
 
 while i<n:
-    if nums1[i] < nums2[j]:
+    if nums1[i] <= nums2[j]:
         if len(result) == 0 or result[-1]!=nums1[i]:
             result.append(nums1[i])
         i += 1
