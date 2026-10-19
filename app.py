@@ -1,63 +1,29 @@
-from flask import Flask, jsonify
-import mysql.connector
+# armstrong
+# n = 153
+# num = n
+# res = 0
+# nod = len(str(n))
 
-app = Flask(__name__)
+# while num!=0:
+#     ld = num%10
+#     res = res + (ld**nod)
+#     num = num//10
 
-# MySQL connection
-def get_db_connection():
-    connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="PASSWORDOFMYSQL",  #password
-        database="studentdb"
-    )
+# print((res==n))
 
-    return connection
+# print factors of a given number
+from math import sqrt 
+result = []
+num = int(input())
 
-@app.route("/", methods=["GET"])
-def default():
-    data="<h1 style='text-align: center'>Welcome to the Flask</h1>"
-    return data
+for i in range(1,int(sqrt(num))+1):
 
-# Get all students
-@app.route("/students", methods=["GET"])
-def get_students():
+    if num%i == 0:
+        result.append(i)
 
-    connection = get_db_connection()
-    cursor = connection.cursor(dictionary=True)
+        if num//i != i:
+            result.append(num//i)
 
-    cursor.execute("SELECT * FROM students")
-
-    students = cursor.fetchall()
-
-    cursor.close()
-    connection.close()
-
-    return jsonify(students)
+print(result)
 
 
-# Get one student
-@app.route("/students/<int:id>", methods=["GET"])
-def get_student(id):
-
-    connection = get_db_connection()
-    cursor = connection.cursor(dictionary=True)
-
-    cursor.execute(
-        "SELECT * FROM students WHERE id = %s",
-        (id,)
-    )
-
-    student = cursor.fetchone()
-
-    cursor.close()
-    connection.close()
-
-    if student:
-        return jsonify(student)
-
-    return jsonify({"message": "Student not found"}), 404
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
